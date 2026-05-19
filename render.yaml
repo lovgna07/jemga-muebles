@@ -1,0 +1,67 @@
+services:
+  - type: web
+    name: iannini-jemga-muebles
+    runtime: docker
+    plan: starter            # $7/mes — free tier no soporta Docker
+    healthCheckPath: /
+    envVars:
+      - key: APP_NAME
+        value: "Iannini Jemga Muebles"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true  # Render genera APP_KEY automáticamente
+      - key: APP_URL
+        value: https://iannini-jemga-muebles.onrender.com   # cambiar por tu URL real
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: iannini-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: iannini-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: iannini-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: iannini-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: iannini-db
+          property: password
+      - key: DB_SSLMODE
+        value: require
+      - key: FILESYSTEM_DISK
+        value: public
+      - key: SESSION_DRIVER
+        value: cookie
+      - key: CACHE_STORE
+        value: file
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: WHATSAPP_NUMERO
+        sync: false          # Lo pones manualmente en el dashboard
+      - key: ADMIN_EMAIL
+        sync: false          # Email del admin de Filament
+      - key: ADMIN_NAME
+        sync: false          # Nombre del admin
+      - key: ADMIN_PASSWORD
+        sync: false          # Contraseña segura — CAMBIA ESTO
+    disk:
+      name: storage
+      mountPath: /var/www/html/storage/app
+      sizeGB: 5              # Para imágenes subidas desde Filament
+
+databases:
+  - name: iannini-db
+    plan: free               # PostgreSQL gratis en Render
+    databaseName: iannini
+    user: iannini

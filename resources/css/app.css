@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+@theme {
+    --color-negro:        #f0ead8;
+    --color-dorado:       #6b5211;
+    --color-dorado-claro: #b8922e;
+    --color-blanco:       #0a0806;
+    --color-gris-oscuro:  #e4ddc8;
+    --color-gris-medio:   #d5cdb8;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Cormorant Garamond', Georgia, serif;
+    --font-ui:      'Montserrat', sans-serif;
+}
+
+/* ─── Base ───────────────────────────────────────────────────── */
+@layer base {
+    html { scroll-behavior: smooth; }
+
+    body {
+        background-color: #f0ead8;
+        color: #0a0806;
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    ::selection {
+        background-color: #c9a84c;
+        color: #0a0806;
+    }
+
+    ::-webkit-scrollbar       { width: 5px; }
+    ::-webkit-scrollbar-track { background: #e4ddc8; }
+    ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 3px; }
+}
+
+/* ─── Components ─────────────────────────────────────────────── */
+@layer components {
+    .btn-dorado {
+        @apply bg-dorado text-negro font-ui text-xs tracking-[0.2em] uppercase py-3 px-8
+               transition-all duration-300 hover:bg-dorado-claro inline-block cursor-pointer;
+    }
+
+    .btn-outline-dorado {
+        @apply border border-dorado/50 text-dorado font-ui text-xs tracking-[0.2em] uppercase
+               py-3 px-8 transition-all duration-300 hover:bg-dorado hover:text-negro
+               hover:border-dorado inline-block cursor-pointer;
+    }
+
+    .section-label {
+        @apply font-ui text-dorado text-xs tracking-[0.4em] uppercase block mb-4;
+    }
+
+    .section-title {
+        @apply font-display text-4xl md:text-5xl text-blanco leading-tight;
+    }
+
+    .input-luxury {
+        @apply w-full bg-gris-medio border border-dorado/20 text-blanco font-body text-base
+               px-4 py-3 focus:outline-none focus:border-dorado/60 transition-colors
+               placeholder:text-blanco/50;
+    }
+}
+
+/* ─── Utilities ──────────────────────────────────────────────── */
+@layer utilities {
+    .navbar-scrolled {
+        background-color: rgba(240, 234, 216, 0.97) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.15) !important;
+        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .text-gradient-gold {
+        background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 50%, #c9a84c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+/* ─── Scroll indicator animation ─────────────────────────────── */
+@keyframes scroll-pulse {
+    0%, 100% { opacity: 0.25; }
+    50%       { opacity: 0.8; }
+}
+
+.scroll-line { animation: scroll-pulse 2.2s ease-in-out infinite; }
+
+/* ─── AOS pointer-events fix ─────────────────────────────────── */
+[data-aos]            { pointer-events: none; }
+[data-aos].aos-animate { pointer-events: auto; }
