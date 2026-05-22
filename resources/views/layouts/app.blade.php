@@ -74,8 +74,8 @@
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-dorado mt-0.5">↗</span>
-                            <a href="mailto:info@iannini.com.co"
-                                class="hover:text-dorado transition-colors">info@iannini.com.co</a>
+                            <a href="mailto:muebles.jemga@gmail.com"
+                                class="hover:text-dorado transition-colors">muebles.jemga@gmail.com</a>
                         </li>
                     </ul>
                 </div>
