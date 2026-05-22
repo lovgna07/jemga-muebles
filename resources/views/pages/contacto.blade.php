@@ -145,7 +145,16 @@
                                 </h3>
                             </div>
 
-                            @foreach ([['Ubicación', 'Bogotá, Colombia<br>Cra 13 # 93-40, Chapinero'], ['Teléfono', '+57 300 123 4567<br>+57 1 234 5678'], ['Email', 'info@iannini.com.co<br>proyectos@iannini.com.co'], ['Horario', 'Lunes – Viernes: 8am – 6pm<br>Sábados: 9am – 2pm']] as [$label, $value])
+                            @foreach ([
+            [
+                'Ubicación',
+                'Bogotá, Colombia<br>Calle 69 a # 90-25
+        , Chapinero',
+            ],
+            ['Teléfono', '+57 314 4916988<br>+57 1 234 5678'],
+            ['Email', 'muebles.jemga@gmail.com<br>proyectos@iannini.com.co'],
+            ['Horario', 'Lunes – Viernes: 8am – 6pm<br>Sábados: 9am – 2pm'],
+        ] as [$label, $value])
                                 <div class="border-b border-dorado/10 pb-6">
                                     <p class="font-ui text-[10px] tracking-[0.35em] text-dorado uppercase mb-2">
                                         {{ $label }}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +12,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body class="bg-negro text-blanco font-body antialiased">
 
     @include('components.navbar')
@@ -45,13 +49,13 @@
                 <div>
                     <h4 class="font-ui text-xs tracking-[0.3em] text-dorado uppercase mb-6">Navegación</h4>
                     <ul class="space-y-3">
-                        @foreach([['inicio','Inicio'],['proyectos','Proyectos'],['nosotros','Nosotros'],['contacto','Contacto']] as [$route, $label])
-                        <li>
-                            <a href="{{ route($route) }}"
-                               class="font-body text-blanco/80 text-sm hover:text-dorado transition-colors">
-                                {{ $label }}
-                            </a>
-                        </li>
+                        @foreach ([['inicio', 'Inicio'], ['proyectos', 'Proyectos'], ['nosotros', 'Nosotros'], ['contacto', 'Contacto']] as [$route, $label])
+                            <li>
+                                <a href="{{ route($route) }}"
+                                    class="font-body text-blanco/80 text-sm hover:text-dorado transition-colors">
+                                    {{ $label }}
+                                </a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -66,11 +70,12 @@
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-dorado mt-0.5">↗</span>
-                            <a href="tel:+573001234567" class="hover:text-dorado transition-colors">+57 300 123 4567</a>
+                            <a href="tel:+573144916988" class="hover:text-dorado transition-colors">+57 300 123 4567</a>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-dorado mt-0.5">↗</span>
-                            <a href="mailto:info@iannini.com.co" class="hover:text-dorado transition-colors">info@iannini.com.co</a>
+                            <a href="mailto:info@iannini.com.co"
+                                class="hover:text-dorado transition-colors">info@iannini.com.co</a>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +87,7 @@
                     © {{ date('Y') }} Iannini Jemga Muebles. Todos los derechos reservados.
                 </p>
                 <a href="{{ route('whatsapp.flotante') }}"
-                   class="font-ui text-xs tracking-widest text-dorado hover:text-dorado-claro transition-colors uppercase">
+                    class="font-ui text-xs tracking-widest text-dorado hover:text-dorado-claro transition-colors uppercase">
                     WhatsApp Business →
                 </a>
             </div>
@@ -92,4 +97,5 @@
     @include('components.cta-whatsapp')
 
 </body>
+
 </html>
