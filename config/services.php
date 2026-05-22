@@ -36,7 +36,7 @@ return [
     ],
 
     'whatsapp' => [
-        'numero'   => env('WHATSAPP_NUMERO', '+573001234567'),
+        'numero'   => env('WHATSAPP_NUMERO', '+573144916988'), 
         'token'    => env('WHATSAPP_TOKEN'),
         'phone_id' => env('WHATSAPP_PHONE_ID'),
     ],

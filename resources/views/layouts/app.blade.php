@@ -70,7 +70,7 @@
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-dorado mt-0.5">↗</span>
-                            <a href="tel:+573144916988" class="hover:text-dorado transition-colors">+57 300 123 4567</a>
+                            <a href="tel:+573144916988" class="hover:text-dorado transition-colors">+57 314 491 6988</a>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-dorado mt-0.5">↗</span>
